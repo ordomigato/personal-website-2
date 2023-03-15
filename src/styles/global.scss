@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Permanent+Marker&family=Raleway:wght@400;600&family=Ropa+Sans&display=swap');
+
+:root {
+  --main-color: #484050;
+  --secondary-color: #C5AFDB;
+  --accent-color: #FFFF9F;
+  --light-gray: #B3A8BE;
+  --overlay-color: #826F95;
+}
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+main {
+  min-height: 100vh;
+  display: block;
+}

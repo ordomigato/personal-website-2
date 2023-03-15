@@ -23,6 +23,8 @@ const config: GatsbyConfig = {
       "path": "./src/pages/"
     },
     __key: "pages"
+  }, {
+    resolve: "gatsby-plugin-react-svg",
   }]
 };
 

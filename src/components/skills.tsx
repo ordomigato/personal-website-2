@@ -63,7 +63,7 @@ const Skills: React.FC = () => {
               <div className="skill-subsection">
                 <p className="skill-subsection_title">Languages</p>
                 <div className="skill-subsection_items">
-                  <p>HTML | CSS | JavaScript | Typescript | Golang | JSON | Markup</p>
+                  <p>HTML | CSS | JavaScript | Typescript | Golang | JSON | Markdown</p>
                 </div>
               </div>
               <div className="skill-subsection">

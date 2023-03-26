@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: column;
     transform: scale(0.8);
+    border-radius: 5px;
     .web-dev_skills {
       order: 1;
     }
@@ -59,7 +60,7 @@
           border: 0;
           text-align: center;
           &::before {
-            content: "\2022 \2022 \2022";
+            content: "\25C6 \25C6 \25C6";
             font-size: 1rem;
             color: var(--main-color);
             opacity: 0.5;

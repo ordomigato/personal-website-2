@@ -2,8 +2,14 @@
   position: absolute;
   top: 0;
   right: 0;
+  left: 0;
   padding: 1rem;
   z-index: 1;
+  transition: background-color 0.2s ease-out;
+  &:hover {
+    transition: background-color 0.2s ease-out;
+    background-color: var(--main-color);
+  }
   ul {
     list-style-type: none;
     margin: 0;

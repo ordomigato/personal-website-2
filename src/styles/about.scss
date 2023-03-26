@@ -1,0 +1,43 @@
+.about-section {
+  position: relative;
+  background-color: primary;
+  background: rgb(97, 93, 148);
+  // background-color: var(--overlay-color);
+  // background-color: var(--main-color);
+  // background: linear-gradient(
+  //   138deg,
+  //   rgba(97, 93, 148, 1) 1%,
+  //   rgba(9, 32, 63, 1) 100%,
+  //   rgba(72, 64, 80, 1) 100%
+  // );
+  padding: 12rem 1rem 12rem 1rem;
+  hr.about-hr {
+    margin-top: 2rem;
+    border: 0;
+    text-align: center;
+    &::before {
+      content: "\25C6 \25C6 \25C6";
+      font-size: 1rem;
+      color: white;
+      opacity: 0.5;
+    }
+  }
+  h1,
+  p {
+    color: white;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-family: var(--main-font-family);
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-bottom: 1rem;
+  }
+  p {
+    font-weight: 300;
+    line-height: 1.5em;
+    font-size: 1rem;
+  }
+}

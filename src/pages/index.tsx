@@ -2,11 +2,11 @@ import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
 import Nav from "../components/nav"
 import CubeScene from "../components/cube-scene"
+import About from "../components/about"
 import Skills from "../components/skills"
 import "../styles/normalize.scss"
 import "../styles/global.scss"
 import "../styles/index-page.scss"
-import "../styles/cube-pattern.scss"
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -23,6 +23,9 @@ const IndexPage: React.FC<PageProps> = () => {
           <div id="dot_4" className="dot"></div>
           <div id="dot_5" className="dot"></div>
         </div>
+      </section>
+      <section>
+        <About />
       </section>
       <section>
         <Skills />

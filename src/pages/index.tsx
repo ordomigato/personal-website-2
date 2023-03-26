@@ -13,7 +13,7 @@ const IndexPage: React.FC<PageProps> = () => {
     <main>
       <Nav />
       <CubeScene />
-      {/* <section className="index-hero">
+      <section className="index-hero">
         <h1>Jeremy Gervais</h1>
         <p>Web Developer | UI/UX Designer</p>
         <div id="dots">
@@ -23,7 +23,7 @@ const IndexPage: React.FC<PageProps> = () => {
           <div id="dot_4" className="dot"></div>
           <div id="dot_5" className="dot"></div>
         </div>
-      </section> */}
+      </section>
       <section>
         <Skills />
       </section>

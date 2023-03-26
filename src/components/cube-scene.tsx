@@ -1,6 +1,11 @@
 import React, { useEffect, useRef } from 'react'
 import * as THREE from "three"
+import { gsap } from "gsap";
 import "../styles/global.scss"
+
+interface CubeObject extends THREE.Mesh {
+  animated: boolean,
+}
 
 const createCube = (x: number, y: number, z: number): THREE.Mesh<THREE.BoxGeometry, THREE.MeshBasicMaterial> => {
   const geometry = new THREE.BoxGeometry( 1, 1, 1 );
@@ -69,9 +74,47 @@ const CubeScene: React.FC = () => {
 
       camera.position.set(-50, 50, 50)
       camera.lookAt(0, 0, 0);
+
+      const raycaster = new THREE.Raycaster();
+      const pointer = new THREE.Vector2();
+
+      function onPointerMove( event: PointerEvent ) {
+        pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+        pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+        // calculate pointer position in normalized device coordinates
+        // (-1 to +1) for both components
+        raycaster.setFromCamera( pointer, camera );
+
+        const intersects = raycaster.intersectObjects( scene.children );
+        for ( let i = 0; i < intersects.length; i ++ ) {
+          const object = intersects[ i ].object as CubeObject;
+          if (!object.animated) {
+            const originalPosition = new THREE.Vector3(object.position.x, object.position.y, object.position.z);
+            // @ts-ignore
+            const originalColor = new THREE.Color(object.material.color)
+            const newColor = new THREE.Color( 0xC5AFDB );
+
+            object.animated = true;
+            // @ts-ignore
+            gsap.to(object.material.color, { duration: 1, r: newColor.r, g: newColor.g, b: newColor.b });
+            gsap.to(object.position, { duration: 1, y: object.position.y + 0.5});
+            gsap.to(object.scale, { duration: 1, y: 2 })
+            setTimeout(() => {
+              // @ts-ignore
+              gsap.to(object.material.color, { duration: 1, r: originalColor.r, g: originalColor.g, b: originalColor.b })
+              gsap.to(object.position, { duration: 1, y: originalPosition.y})
+              gsap.to(object.scale, { duration: 1, y: 1, onComplete() { object.animated = false } })
+            }, 1000)
+          }
+        }
+      }
+
+      window.addEventListener( 'pointermove', onPointerMove );
   
       const animate = function () {
         requestAnimationFrame( animate );
+        // update the picking ray with the camera and pointer position
         renderer.render( scene, camera );
       }
   
@@ -103,7 +146,7 @@ const CubeScene: React.FC = () => {
   }, [])
   
   return (
-    <div ref={mountRef} style={{ height: `100vh` }}>
+    <div ref={mountRef}>
     </div>
   )
 }

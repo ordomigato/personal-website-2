@@ -27,7 +27,7 @@ const Skills: React.FC = () => {
                 <div className="skill-subsection_items">
                   <p>
                     React | Vue | Gatsby | Nuxt | Lit Element | Redux | Vuex | jQuery | Rellax
-                    | Swiper | ThreeJS
+                    | Swiper | ThreeJS | Jest | ESLIST | PRETTIER | GSAP | Jest | Mocha | Chai | Sinon | bCrypt
                   </p>
                 </div>
               </div>
@@ -37,13 +37,14 @@ const Skills: React.FC = () => {
                 </p>
                 <div className="skill-subsection_items">
                   <p>
-                    Bootstrap | Tailwind | Material UI | Font Awesome | SASS
+                    Bootstrap | Tailwind | Material UI | Font Awesome
                   </p>
                 </div>
               </div>
               <div className="skill-subsection">
                 <p className="skill-subsection_title">UI / UX Tools</p>
                 <ul className="skill-subsection_items">
+                  <li>Figma</li>
                   <li>Adobe Creative Suite ( PS | AI | XD )</li>
                   <li>Pen & Paper</li>
                 </ul>
@@ -63,7 +64,7 @@ const Skills: React.FC = () => {
               <div className="skill-subsection">
                 <p className="skill-subsection_title">Languages</p>
                 <div className="skill-subsection_items">
-                  <p>HTML | CSS | JavaScript | Typescript | Golang | JSON | Markdown</p>
+                  <p>HTML | CSS | SASS | JavaScript | Typescript | Golang | JSON | Markdown</p>
                 </div>
               </div>
               <div className="skill-subsection">

@@ -98,5 +98,5 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
-  "include": ["./src/**/*", "types/three", "./custom.d.ts", "./gatsby-node.ts", "./gatsby-config.ts", "./plugins/**/*"]
+  "include": ["./src/**/*", "types/three", "./custom.d.ts", "./gatsby-node.ts", "./gatsby-config.ts", "./plugins/**/*", "types.d.ts"]
 }

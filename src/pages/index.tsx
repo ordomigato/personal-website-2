@@ -4,6 +4,7 @@ import Nav from "../components/nav"
 import CubeScene from "../components/cube-scene"
 import About from "../components/about"
 import Skills from "../components/skills"
+import Projects from "../components/projects"
 import "../styles/normalize.scss"
 import "../styles/global.scss"
 import "../styles/index-page.scss"
@@ -24,12 +25,9 @@ const IndexPage: React.FC<PageProps> = () => {
           <div id="dot_5" className="dot"></div>
         </div>
       </section>
-      <section>
-        <About />
-      </section>
-      <section>
-        <Skills />
-      </section>
+      <About />
+      <Skills />
+      <Projects />
     </main>
   )
 }

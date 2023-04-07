@@ -19,7 +19,7 @@
     align-items: center;
     li {
       margin-right: 1rem;
-      a {
+      a:not(.resume-button) {
         position: relative;
         color: white;
         text-decoration: none;
@@ -39,14 +39,16 @@
           width: 100%;
         }
       }
-      button {
+      .resume-button {
         background: none;
         color: white;
         border: 1px solid white;
         padding: 0.5rem 1rem;
+        display: block;
         font: inherit;
         cursor: pointer;
         outline: inherit;
+        text-decoration: none;
         transition: 0.2s ease-out, color 0s ease-out;
         box-shadow: inset 0 0 0 0 white;
         &:hover,

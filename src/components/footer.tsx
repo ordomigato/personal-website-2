@@ -1,5 +1,4 @@
 import React from "react"
-import resume from "../files/Jeremy Gervais - Resume.pdf"
 import BehanceSVG from "../images/svg/behance.svg"
 import InstagramSVG from "../images/svg/instagram.svg"
 import LinkedinSVG from "../images/svg/linkedin.svg"

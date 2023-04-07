@@ -28,10 +28,10 @@ const CubeScene: React.FC = () => {
       // camera
       const sizes = {
         width: window.innerWidth,
-        height: window.innerHeight * 2
+        height: window.innerHeight
       }
-      const aspectRatio = sizes.width * 2 / sizes.height
-      const frustumSize = 5
+      const aspectRatio = sizes.width / 2 / sizes.height
+      const frustumSize = 10
       const camera = new THREE.OrthographicCamera(
         -frustumSize * aspectRatio,
         frustumSize * aspectRatio,
@@ -43,7 +43,7 @@ const CubeScene: React.FC = () => {
 
       // renderer
       const renderer = new THREE.WebGLRenderer();
-      renderer.setSize( window.innerWidth, window.innerHeight );
+      renderer.setSize( window.innerWidth, window.innerHeight * 2 );
       mountRef.current.appendChild( renderer.domElement );
 
       const group = new THREE.Group();
@@ -79,8 +79,8 @@ const CubeScene: React.FC = () => {
       const pointer = new THREE.Vector2();
 
       function onPointerMove( event: PointerEvent ) {
-        pointer.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-        pointer.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+        pointer.x = ( event.clientX / renderer.domElement.width ) * 2 - 1;
+        pointer.y = - ( event.clientY / renderer.domElement.height ) * 2 + 1;
 
         // calculate pointer position in normalized device coordinates
         // (-1 to +1) for both components
@@ -121,15 +121,15 @@ const CubeScene: React.FC = () => {
       let onWindowResize = function () {
         // update sizes
         sizes.width = window.innerWidth;
-        sizes.height = window.innerHeight * 2;
-        const aspectRatio = sizes.width * 2 / sizes.height 
+        sizes.height = window.innerHeight;
+        const aspectRatio = sizes.width / 2 / sizes.height
         // update camera
         camera.left = -frustumSize * aspectRatio;
         camera.right = frustumSize * aspectRatio;
         camera.top = frustumSize;
         camera.bottom = -frustumSize;
+        renderer.setSize( window.innerWidth, window.innerHeight * 2 );
         camera.updateProjectionMatrix();
-        renderer.setSize( window.innerWidth, window.innerHeight );
       }
   
       window.addEventListener("resize", onWindowResize, false);

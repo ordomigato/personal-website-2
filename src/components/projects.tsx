@@ -41,7 +41,7 @@ const Projects = () => {
               code
               featuredImage {
                 childImageSharp {
-                  gatsbyImageData(height: 800)
+                  gatsbyImageData(height: 600)
                 }
               }
             }
@@ -80,6 +80,7 @@ const Projects = () => {
                 image={
                   edge.node.frontmatter.featuredImage.childImageSharp.gatsbyImageData
                 }
+                objectFit="cover"
                 // style={{ position: "absolute" }}
                 alt={`${edge.node.frontmatter.title} featured image`}
               />

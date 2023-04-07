@@ -13,10 +13,13 @@
 // Template Styles
 .project-page-wrapper {
   max-width: 1024px;
-  margin: auto;
+  margin: 0 auto 2rem;
   font-family: var(--main-font-family);
   line-height: 1.5em;
   padding: 3%;
+  .gatsby-image-wrapper-constrained {
+    display: block;
+  }
   .back-link {
     text-decoration: none;
   }

@@ -28,9 +28,9 @@ const CubeScene: React.FC = () => {
       // camera
       const sizes = {
         width: window.innerWidth,
-        height: window.innerHeight
+        height: window.innerHeight * 2
       }
-      const aspectRatio = sizes.width / sizes.height
+      const aspectRatio = sizes.width * 2 / sizes.height
       const frustumSize = 5
       const camera = new THREE.OrthographicCamera(
         -frustumSize * aspectRatio,
@@ -121,8 +121,8 @@ const CubeScene: React.FC = () => {
       let onWindowResize = function () {
         // update sizes
         sizes.width = window.innerWidth;
-        sizes.height = window.innerHeight;
-        const aspectRatio = sizes.width / sizes.height 
+        sizes.height = window.innerHeight * 2;
+        const aspectRatio = sizes.width * 2 / sizes.height 
         // update camera
         camera.left = -frustumSize * aspectRatio;
         camera.right = frustumSize * aspectRatio;

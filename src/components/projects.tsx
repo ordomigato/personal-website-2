@@ -1,11 +1,11 @@
 import React, { useEffect } from "react"
 import { useStaticQuery } from "gatsby"
-import { GatsbyImage, getImage, getImageData, getSrc , IGatsbyImageData } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import gsap, { Back } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { graphql } from "gatsby"
-import Github from "../images/svg/github-brands.svg"
+import Github from "../images/svg/github.svg"
 import "../styles/projects.scss"
 
 

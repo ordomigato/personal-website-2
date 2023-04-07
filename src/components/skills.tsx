@@ -135,7 +135,7 @@ const Skills: React.FC = () => {
                 <p className="skill-subsection_title">Frameworks / Libraries</p>
                 <div className="skill-subsection_items">
                   <p>
-                    Express | Express Validator | Axios | JWT | Bcrypt | Gin
+                    Express | Express Validator | Axios | JWT | Bcrypt | Gin | Sequelize
                   </p>
                 </div>
               </div>

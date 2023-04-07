@@ -81,7 +81,8 @@
           &:last-of-type {
             transform: translateY(-1px);
           }
-          &:hover {
+          &:hover,
+          &:focus {
             background-color: var(--main-color);
             transition: background-color 0.1s linear;
           }
@@ -120,7 +121,8 @@
           }
         }
       }
-      &:hover > .overlay {
+      &:hover > .overlay,
+      .overlay:has(a:focus) {
         opacity: 1;
         transition: opacity 0.2s ease-in;
       }
@@ -135,7 +137,8 @@
     text-transform: uppercase;
     align-self: center;
     font-size: 0.8rem;
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: var(--main-color);
       transition: background-color 0.1s ease-out;
     }

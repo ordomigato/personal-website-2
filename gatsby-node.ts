@@ -1,5 +1,6 @@
 const path = require('path')
 
+// @ts-ignore
 exports.createPages = ({actions, graphql}) => {
     const {createPage} = actions
 
@@ -29,11 +30,12 @@ exports.createPages = ({actions, graphql}) => {
           }
         }
       }
-    `).then(res => {
+    `).then((res: any) => {
         if(res.errors) {
             return Promise.reject(res.errors)
         }
 
+        // @ts-ignore
         res.data.allMarkdownRemark.edges.forEach(({node}) => {
             createPage({
                 path: node.frontmatter.path,

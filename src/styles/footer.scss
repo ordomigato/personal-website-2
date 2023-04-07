@@ -1,0 +1,35 @@
+.footer_section {
+  background-color: var(--main-color);
+  color: white;
+  padding: 4rem 1rem;
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  a {
+    color: white;
+  }
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+  .social-media {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    // position: absolute;
+    // left: 2rem;
+    // top: 50%;
+    // transform: translate(0, -50%);
+    a:not(:last-of-type) {
+      // margin-right: 1rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+  h2 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}

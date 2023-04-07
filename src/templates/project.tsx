@@ -88,7 +88,7 @@ export const postQuery = graphql`
         website
         featuredImage {
           childImageSharp {
-            gatsbyImageData(height: 600)
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }

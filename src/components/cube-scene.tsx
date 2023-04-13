@@ -7,9 +7,20 @@ interface CubeObject extends THREE.Mesh {
   animated: boolean,
 }
 
+interface ICameraConfigure {
+  left: number
+  right: number
+  top: number
+  bottom: number
+  far: number
+  near: number
+}
+
+const color = 0x484050
+
 const createCube = (x: number, y: number, z: number): THREE.Mesh<THREE.BoxGeometry, THREE.MeshBasicMaterial> => {
   const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-  const material = new THREE.MeshLambertMaterial( { color: 0x484050 } );
+  const material = new THREE.MeshLambertMaterial( { color } );
   const cube = new THREE.Mesh( geometry, material );
 
   cube.position.x = x;
@@ -18,40 +29,68 @@ const createCube = (x: number, y: number, z: number): THREE.Mesh<THREE.BoxGeomet
   return cube;
 }
 
+// set camera settings for creation and updating
+const cameraConfig = (): ICameraConfigure => {
+  const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight,
+  }
+  const aspectRatio = sizes.width / sizes.height;
+  let frustumSize = 5
+  if (aspectRatio > 10) {
+    frustumSize = 2;
+  }
+  if (aspectRatio > 20) {
+    frustumSize = 1;
+  }
+  if (aspectRatio > 100) {
+    frustumSize = 0.1;
+  }
+  return {
+    left: -frustumSize * aspectRatio,
+    right: frustumSize * aspectRatio,
+    top: frustumSize,
+    bottom: -frustumSize,
+    near: 0.1,
+    far: 1000,
+  }
+}
+
+const updateCamera = (camera: THREE.OrthographicCamera) => {
+  const { left, right, top, bottom, near, far } = cameraConfig();
+  camera.left = left;
+  camera.right = right;
+  camera.top = top;
+  camera.bottom = bottom;
+  camera.near = near;
+  camera.far = far;
+}
+
 const CubeScene: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (mountRef.current) {
       // scene
       const scene = new THREE.Scene();
+      scene.background = new THREE.Color( color );
 
       // camera
-      const sizes = {
-        width: window.innerWidth,
-        height: window.innerHeight
-      }
-      const aspectRatio = sizes.width / 2 / sizes.height
-      const frustumSize = 10
-      const camera = new THREE.OrthographicCamera(
-        -frustumSize * aspectRatio,
-        frustumSize * aspectRatio,
-        frustumSize,
-        -frustumSize,
-        0.1,
-        1000,
-      )
+      const { left, right, top, bottom, near, far } = cameraConfig();
+      const camera = new THREE.OrthographicCamera(left, right, top, bottom, near, far);
+      camera.position.set(-50, 50, 50)
+      camera.lookAt(0, 0, 0);
 
       // renderer
       const renderer = new THREE.WebGLRenderer();
-      renderer.setSize( window.innerWidth, window.innerHeight * 2 );
+      renderer.setSize( window.innerWidth, window.innerHeight );
       mountRef.current.appendChild( renderer.domElement );
 
       const group = new THREE.Group();
 
       const renderCubes = () => {
-        const cubes = 20;
+        const cubes = 200;
         for (let x = 0; x < cubes; x++) {
-          for (let y = 0; y < cubes; y++) {
+          for (let y = 0; y < cubes / 20; y++) {
               const zDisplacement = Math.abs(x + y - y)
               const cube = createCube(x + y, y, zDisplacement);
               group.add(cube)
@@ -69,11 +108,8 @@ const CubeScene: React.FC = () => {
 
       // add spotlight
       const spotLight = new THREE.SpotLight( 0xffffff );
-      spotLight.position.set( 100, 150, 100 );
+      spotLight.position.set( 100, 180, 100 );
       scene.add( spotLight );
-
-      camera.position.set(-50, 50, 50)
-      camera.lookAt(0, 0, 0);
 
       const raycaster = new THREE.Raycaster();
       const pointer = new THREE.Vector2();
@@ -119,16 +155,8 @@ const CubeScene: React.FC = () => {
       }
   
       let onWindowResize = function () {
-        // update sizes
-        sizes.width = window.innerWidth;
-        sizes.height = window.innerHeight;
-        const aspectRatio = sizes.width / 2 / sizes.height
-        // update camera
-        camera.left = -frustumSize * aspectRatio;
-        camera.right = frustumSize * aspectRatio;
-        camera.top = frustumSize;
-        camera.bottom = -frustumSize;
-        renderer.setSize( window.innerWidth, window.innerHeight * 2 );
+        updateCamera(camera);
+        renderer.setSize( window.innerWidth, window.innerHeight );
         camera.updateProjectionMatrix();
       }
   

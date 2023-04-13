@@ -7,10 +7,16 @@ code: ""
 tech: ["WordPress", "Elementor Pro", "Digital Ocean"]
 ---
 
+<div class="card notice">
+<p>
+NOTE: This site has been completely updated since and no longer reflects my work.
+</p>
+</div>
+
 ## Overview
 
 <p>
-After completing <a href="http://localhost:8000/parking-registration-app" target="_blank">Skyview’s parking permit app</a>, we started working on migrating their GoDaddy site to WordPress as GoDaddy’s website builder had proven to be difficult to edit as well as expensive to upkeep. My main reason for choosing WordPress was that it would be easier to hand off to the business, it would bootstrap the development, and it is well-supported. I also had Elementor Pro which bootstrapped the development process and would give Skyview managers and website administrators a WYSIWYG feeling similar to the website builder on GoDaddy
+After completing <a href="/parking-registration-app" target="_blank">Skyview’s parking permit app</a>, I began working on migrating their GoDaddy site to WordPress as GoDaddy’s website builder had proven to be difficult to edit as well as expensive to upkeep. My main reason for choosing WordPress was that it would be easier to hand off to the business, it would bootstrap the development, and it is well-supported. I used Elementor Pro to hasten the development process as well as give Skyview managers and website administrators a WYSIWYG feeling similar to the website builder on GoDaddy.
 </p>
 
 ## Challenges & Solutions

@@ -9,6 +9,12 @@ tech:
 api: ["IGDB (Internet Games Database)"]
 ---
 
+<div class="card notice">
+<p>
+NOTE: Due to heroku's removal of their free tier, this project is currently not being hosted anywhere. I hope to find some time to reupload this project somewhere else soon!
+</p>
+</div>
+
 ## Overview
 
 <p>

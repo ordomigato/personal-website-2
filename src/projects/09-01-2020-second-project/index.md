@@ -22,20 +22,20 @@ tech:
   ]
 ---
 
+<div class="card notice">
+<p>
+NOTE: The initial version of the app (currently live) works perfectly fine, however, a newer version is in the works with some much-needed enhancements. The overall technologies used are pretty much the same except for the addition of Sequelize as the ORM. Features such as resident/visitor login is being added, as well as some UI/UX enhancements.
+</p>
+</div>
+
 ## Overview
 
 <p>
 The client, <a href="https://skyviewsecurity.ca/" target="_blank">Skyview Security</a> is a Canadian owned private security company that operates within Toronto and services the GTA as well as its surrounding regions.
 
-The client is growing rapidly and was looking for ways in which they may improve the way parking enforcement was handled at one of their locations. Prior to this app, parking permit registrations were managed manually through SMS and email channels. Although effective, the ability to recieve, filter, and manage permits became stressful and time-consuming.
+The client is growing rapidly and was looking for ways in which they could improve the way parking enforcement was handled at one of their locations. Prior to this app, parking permit registrations were managed manually through SMS and email channels. Although effective, the ability to recieve, filter, and manage permits became stressful and time-consuming.
 
 </p>
-
-<div class="card notice">
-<p>
-The initial version of the app (currently live) works perfectly fine, however, a newer version is in the works with some much-needed enhancements that should be implemented by the end of December pending approval. The overall technologies used are pretty much the same except for the addition of Sequelize as the ORM. Features such as resident/visitor login is being added, as well as some UI/UX enhancements.
-</p>
-</div>
 
 ## Challenges
 
@@ -46,7 +46,7 @@ The challenge was to construct a simple, yet powerful application that would be 
 ## Solutions
 
 <p>
-Developing an application with a fully functioning backend (server), properly structured database, and a professional looking interface within a short time period required me to make many quick and well-thought out decisions as to what technologies I would use. I had decided early on that I would be using Digital Ocean to host the application and the MERN (M being MySQL) stack to build it. Prior to any coding, I mapped out the initial intended database with the use of ER (Entity-Relationship) diagram software.
+Developing an application with a fully functioning backend (server), properly structured database, and a professional looking interface within a short time period required me to make many quick but also well-thought out decisions as to what technologies to employ. I had decided early on that I would be using Digital Ocean to host the application and the MERN (M being MySQL) stack to build it. Prior to any coding, I mapped out the initial intended database with the use of an ER (Entity-Relationship) diagram software.
 </p>
 
 ![ER relationships](../../images/er-diagram.png)

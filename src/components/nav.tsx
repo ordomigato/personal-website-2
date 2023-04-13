@@ -7,8 +7,8 @@ const Nav: React.FC = () => {
     <nav className="top-nav">
       <ul>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="projects">Projects</a></li>
-        <li><a href="contact">Contact</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li><a href={resume} target="_blank" className="resume-button">Resume</a></li>
       </ul>
     </nav>

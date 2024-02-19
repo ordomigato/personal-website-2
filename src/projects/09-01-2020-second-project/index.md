@@ -2,7 +2,7 @@
 path: "/parking-registration-app"
 title: "Parking Registration App"
 featuredImage: ../../images/parking-permit.png
-website: "https://app.skyviewsecurity.ca/"
+website: ""
 code: "https://github.com/ordomigato/parking-app-backend"
 tech:
   [

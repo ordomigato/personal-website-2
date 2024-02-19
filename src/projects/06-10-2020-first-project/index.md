@@ -2,7 +2,7 @@
 path: "/gameshelf"
 title: "GameShelf"
 featuredImage: ../../images/gameshelf-thumb.png
-# website: "https://game-shelf-app.herokuapp.com/"
+website: ""
 code: "https://github.com/ordomigato/game-shelf"
 tech:
   ["NUXT", "Firebase", "NodeJS", "Heroku", "Vuex", "Tailwind", "Axios", "SASS"]

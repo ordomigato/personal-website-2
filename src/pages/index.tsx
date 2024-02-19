@@ -15,7 +15,8 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <main>
       <Nav />
-      <CubeScene />
+        <CubeScene />
+      <div className="background-overlay"></div>
       <section className="index-hero">
         <h1>Jeremy Gervais</h1>
         <p>Web Developer | UI/UX Designer</p>
@@ -23,8 +24,6 @@ const IndexPage: React.FC<PageProps> = () => {
           <div id="dot_1" className="dot"></div>
           <div id="dot_2" className="dot"></div>
           <div id="dot_3" className="dot"></div>
-          <div id="dot_4" className="dot"></div>
-          <div id="dot_5" className="dot"></div>
         </div>
       </section>
       <About />

@@ -2,7 +2,7 @@
 path: "/skyview-website"
 title: "Skyview Security Website"
 featuredImage: ../../images/skyview-thumb.png
-# website: "https://skyviewsecurity.ca/"
+website: "https://skyviewsecurity.ca/"
 code: ""
 tech: ["WordPress", "Elementor Pro", "Digital Ocean"]
 ---

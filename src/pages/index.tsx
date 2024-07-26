@@ -37,4 +37,11 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Jeremy Gervais | Web Developer</title>
+export const Head: HeadFC = () => (
+  <>
+    <title>Jeremy Gervais | Web Developer</title>
+    <link rel="canonical" href="https://jeremygervais.ca/" />
+    <link rel="icon" href="../images/favicon.ico" />
+    <link rel="apple-touch-icon" href="../images/favicon.ico" />
+  </>
+)

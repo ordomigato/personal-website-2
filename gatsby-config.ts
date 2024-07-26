@@ -96,6 +96,12 @@ const config: GatsbyConfig = {
       },
     },
     "gatsby-transformer-sharp",
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        "icon": "src/images/favicon.png"
+      }
+    },
   ]
 };
 

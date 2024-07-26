@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import * as THREE from "three"
 import { gsap } from "gsap";
 import "../styles/global.scss"
@@ -18,9 +18,9 @@ interface ICameraConfigure {
 
 const color = 0x484050
 
-const createCube = (x: number, y: number, z: number): THREE.Mesh<THREE.BoxGeometry, THREE.MeshBasicMaterial> => {
+const createCube = (x: number, y: number, z: number): THREE.Mesh<THREE.BoxGeometry, THREE.MeshLambertMaterial, THREE.Object3DEventMap> => {
   const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-  const material = new THREE.MeshLambertMaterial( { color } );
+  const material = new THREE.MeshPhongMaterial( { color } );
   const cube = new THREE.Mesh( geometry, material );
 
   cube.position.x = x;
@@ -68,6 +68,8 @@ const updateCamera = (camera: THREE.OrthographicCamera) => {
 
 const CubeScene: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     if (mountRef.current) {
       // scene
@@ -101,6 +103,7 @@ const CubeScene: React.FC = () => {
       }
 
       renderCubes();
+      setLoading(false)
 
       // add ambient light
       const light = new THREE.AmbientLight( 0x404040, 1 ); // soft white light
@@ -108,7 +111,9 @@ const CubeScene: React.FC = () => {
 
       // add spotlight
       const spotLight = new THREE.SpotLight( 0xffffff );
-      spotLight.position.set( 100, 180, 100 );
+      spotLight.position.set( -4, 10, 4 );
+      spotLight.intensity = 200;
+
       scene.add( spotLight );
 
       const raycaster = new THREE.Raycaster();
@@ -160,9 +165,9 @@ const CubeScene: React.FC = () => {
         camera.updateProjectionMatrix();
       }
   
-      window.addEventListener("resize", onWindowResize, false);
-  
+      window.addEventListener("resize", onWindowResize, false);  
       animate();
+
 
       // cleanup
       return () => {
@@ -174,7 +179,10 @@ const CubeScene: React.FC = () => {
   }, [])
   
   return (
-    <div ref={mountRef}>
+    <div className="cube-container">
+      <div className={'loading-overlay ' + (loading ? '' : 'hide')}></div>
+      <div ref={mountRef}>
+      </div>
     </div>
   )
 }

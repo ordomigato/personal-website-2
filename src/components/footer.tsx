@@ -39,26 +39,6 @@ const Footer = () => {
         </a>
       </section>
       <p>Website Designed by Jeremy Gervais</p>
-      {/* <p>
-        Icons made by{" "}
-        <a
-          href="https://www.flaticon.com/authors/freepik"
-          target="_blank"
-          rel="noreferrer"
-          title="Freepik"
-        >
-          Freepik
-        </a>{" "}
-        from{" "}
-        <a
-          href="https://www.flaticon.com/"
-          target="_blank"
-          rel="noreferrer"
-          title="Flaticon"
-        >
-          www.flaticon.com
-        </a>
-      </p> */}
     </footer>
   )
 }

@@ -15,7 +15,7 @@ export default function Template({ pageContext }) {
     <>
       <div className="project-page-wrapper">
         <Link to="/" className="back-link">
-          « Back
+          « Go Back
         </Link>
         <h1>{post.frontmatter.title}</h1>
         <hr className="dot-hr" />

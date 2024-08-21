@@ -12,16 +12,30 @@
 
 // Template Styles
 .project-page-wrapper {
+  background-color: white;
+  border-radius: 5px;
   max-width: 1024px;
   margin: 0 auto 2rem;
   font-family: var(--main-font-family);
   line-height: 1.5em;
-  padding: 3%;
+  padding: 2rem;
   .gatsby-image-wrapper-constrained {
     display: block;
   }
   .back-link {
     text-decoration: none;
+    position: sticky;
+    top: 1rem;
+    left: 1rem;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    &:hover {
+      background-color: var(--main-color);
+    }
   }
   p,
   li {
@@ -123,6 +137,13 @@
     }
   }
 }
+
+@media (min-width: 1080px) { 
+  .project-page-wrapper {
+    margin: 0 auto;
+  }
+}
+
 
 .ReactModal__Content::-webkit-scrollbar {
   width: 0.5em;

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useStaticQuery } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
@@ -8,10 +8,14 @@ import { graphql } from "gatsby"
 import Github from "../images/svg/github.svg"
 import "../styles/projects.scss"
 
+type TProjectType = "Website" | "Web App" | "Design"
+
 
 gsap.registerPlugin(ScrollTrigger)
 
 const Projects = () => {
+  const [filteredProjectType, setFilteredProjectType] = useState("")
+
   useEffect(() => {
     gsap.to(".project", {
       opacity: 1,
@@ -27,7 +31,7 @@ const Projects = () => {
         toggleActions: "play play resume reverse",
       },
     })
-  }, [])
+  }, [filteredProjectType])
 
   const data = useStaticQuery(graphql`
     query {
@@ -37,6 +41,7 @@ const Projects = () => {
             frontmatter {
               path
               title
+              type
               website
               code
               featuredImage {
@@ -51,12 +56,22 @@ const Projects = () => {
     }
   `)
 
+  const handleProjectTypeSelect = (skill: TProjectType | '') => {
+    setFilteredProjectType(skill)
+  }
+
   return (
     <section id="projects" className="recent-work_section">
-      <h2>My Recent Work</h2>
-      <p>See either the live project or code repository</p>
+      <h2>Projects</h2>
+      <p>See either the live project or code repository.</p>
+      <div className="project-types">
+      <span onClick={() => handleProjectTypeSelect("")} className={`project-type ${[''].includes(filteredProjectType) ? 'selected' : ''}`}>All</span>
+        <span onClick={() => handleProjectTypeSelect("Web App")} className={`project-type ${['' || 'Web App'].includes(filteredProjectType) ? 'selected' : ''}`}>Web App</span>
+        <span onClick={() => handleProjectTypeSelect("Website")} className={`project-type ${['' || 'Website'].includes(filteredProjectType) ? 'selected' : ''}`}>Website</span>
+        <span onClick={() => handleProjectTypeSelect("Design")} className={`project-type ${['' || 'Design'].includes(filteredProjectType) ? 'selected' : ''}`}>Design</span>
+      </div>
       <div className="projects container">
-        {data.allMarkdownRemark.edges.map((edge: any) => {
+        {data.allMarkdownRemark.edges.filter((edge: any) => filteredProjectType.includes(edge.node.frontmatter.type) || filteredProjectType === '').map((edge: any) => {
           return (
             <article
               className="project"
@@ -86,6 +101,9 @@ const Projects = () => {
               />
               <header className="project-header">
                 <h3 className="project-title">{edge.node.frontmatter.title}</h3>
+                <div className="project-types">
+                  <span className="project-type">{edge.node.frontmatter.type[0]}</span>
+                </div>
                 {edge.node.frontmatter.code !== "" ? (
                   <ul className="project-links">
                     <li className="project-link">

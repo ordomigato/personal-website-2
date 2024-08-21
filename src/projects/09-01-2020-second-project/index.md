@@ -2,6 +2,7 @@
 path: "/parking-registration-app"
 title: "Parking Registration App"
 featuredImage: ../../images/parking-permit.png
+type: ["Web App"]
 website: ""
 code: "https://github.com/ordomigato/parking-app-backend"
 tech:

@@ -2,6 +2,7 @@
 path: "/message-app"
 title: "Message App"
 featuredImage: ../../images/messenger-thumb.png
+type: ["Web App"]
 website: ""
 code: "https://github.com/ordomigato/message-app"
 tech:
@@ -17,9 +18,7 @@ tech:
     "Mocha",
   ]
 ---
-<div class="card notice">
 <p class="card notice">This project is not currently hosted anywhere. If you wish to see the app at work, you can either clone it from the provided repo or ask me for a demonstration.</p>
-</div>
 
 ## Overview
 
@@ -30,7 +29,8 @@ The goal of this project was simple, create a messaging application that took ad
 This project was used to test my ability to develop something small in a timely manner (under 2 weeks), with great attention to detail, while following proper agile development flow. Along the way, I picked up the basics of sockets, practiced some backend unit testing, and got to experience code reviews that provided me with invaluable advice that I could not get otherwise.
 </p>
 
-![Application UI](../../images/messenger-2.png)
+
+![Application UI](../../images/messenger-1.png)
 
 ## Challenges & Solutions
 

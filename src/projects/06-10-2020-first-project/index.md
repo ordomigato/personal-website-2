@@ -2,6 +2,7 @@
 path: "/gameshelf"
 title: "GameShelf"
 featuredImage: ../../images/gameshelf-thumb.png
+type: ["Web App"]
 website: ""
 code: "https://github.com/ordomigato/game-shelf"
 tech:

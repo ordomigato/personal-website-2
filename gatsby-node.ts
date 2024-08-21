@@ -20,7 +20,12 @@ exports.createPages = ({actions, graphql}) => {
                 website
                 featuredImage {
                   childImageSharp {
-                    gatsbyImageData(height: 600)
+                    gatsbyImageData(
+                      layout: CONSTRAINED
+                      height: 600
+                      width: 1000
+                      quality: 100
+                    )
                   }
                 }
               }

@@ -7,7 +7,7 @@ const Contact = () => {
     <section id="contact-form" className="contact_section">
       <div className="contact-container">
         <header>
-          <h2>Have a project in mind?</h2>
+          <h2>Have a project or opportunity in mind?</h2>
           <p>or just want to say hi?</p>
         </header>
         <form

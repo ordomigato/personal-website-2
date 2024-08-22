@@ -88,7 +88,7 @@ const Projects = () => {
                   </a>
                 )}
                 <Link to={edge.node.frontmatter.path} state={{ modal: true }}>
-                  Case Study
+                  Overview
                 </Link>
               </div>
               <GatsbyImage

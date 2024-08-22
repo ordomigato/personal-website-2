@@ -10,7 +10,7 @@ tech: ["WordPress", "Elementor Pro", "Digital Ocean"]
 
 <div class="card notice">
 <p>
-NOTE: This site has been completely updated since and no longer reflects my work.
+NOTE: This site no longer reflects my work and has since been updated.
 </p>
 </div>
 

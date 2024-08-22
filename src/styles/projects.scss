@@ -16,6 +16,32 @@
     font-size: 0.8rem;
     margin: 1em 0 2em 0;
   }
+  & > .project-types {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    .project-type {
+      // border: 1px solid var(--light-gray);
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      transition: 0.1s linear;
+      color: var(--light-gray);
+      user-select: none;
+      font-size: 0.8rem;
+      &:hover {
+        cursor: pointer;
+        background-color: var(--light-gray);
+        color: white;
+      }
+      &:active {
+        background-color: var(--secondary-color);
+      }
+      &.selected {
+        background-color: var(--secondary-color);
+        color: white;
+      }
+    }
+  }
   .projects {
     /**
     * User input values.
@@ -160,32 +186,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    & > .project-types {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      .project-type {
-        // border: 1px solid var(--light-gray);
-        padding: 0.5rem 1rem;
-        border-radius: 100px;
-        transition: 0.1s linear;
-        color: var(--light-gray);
-        user-select: none;
-        font-size: 0.8rem;
-        &:hover {
-          cursor: pointer;
-          background-color: var(--light-gray);
-          color: white;
-        }
-        &:active {
-          background-color: var(--secondary-color);
-        }
-        &.selected {
-          background-color: var(--secondary-color);
-          color: white;
-        }
-      }
-    }
     .projects {
       flex-direction: row;
       .project {

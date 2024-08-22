@@ -13,6 +13,8 @@ const About = () => {
           Full stack (primarily frontend) developer with { yearsExperience }+ years of professional experience designing,
           building and maintaining websites and web applications.
         </p>
+        <br />
+        <p>When the plants are watered &#127793; and the tea is brewed &#127861; it's time to get to work &#128187;</p>
         <hr className="about-hr" />
       </div>
     </section>

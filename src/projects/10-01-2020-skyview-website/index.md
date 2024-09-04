@@ -2,6 +2,7 @@
 path: "/skyview-website"
 title: "Skyview Security Website"
 featuredImage: ../../images/skyview-thumb.png
+date: "2020-10-01"
 type: ["Website"]
 website: "https://skyviewsecurity.ca/"
 code: ""

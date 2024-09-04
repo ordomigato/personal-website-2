@@ -2,6 +2,7 @@
 path: "/message-app"
 title: "Message App"
 featuredImage: ../../images/messenger-thumb.png
+date: "2021-01-19"
 type: ["Web App"]
 website: ""
 code: "https://github.com/ordomigato/message-app"

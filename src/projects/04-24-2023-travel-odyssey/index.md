@@ -1,7 +1,8 @@
 ---
-path: "/travel-app"
-title: "Travel App"
+path: "/travel-odyssey"
+title: "Travel Odyssey"
 featuredImage: ../../images/travel-app/landing-page.png
+date: "2023-04-24"
 type: ["Design"]
 website: ""
 code: ""

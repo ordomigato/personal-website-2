@@ -35,7 +35,7 @@ const Projects = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(sort: {frontmatter: {path: ASC}}) {
+      allMarkdownRemark(sort: {frontmatter: {date: ASC}}) {
         edges {
           node {
             frontmatter {
@@ -43,6 +43,7 @@ const Projects = () => {
               title
               type
               website
+              date
               code
               featuredImage {
                 childImageSharp {

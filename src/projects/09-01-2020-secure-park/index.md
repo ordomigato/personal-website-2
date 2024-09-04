@@ -2,6 +2,7 @@
 path: "/parking-permit-app"
 title: "SecurePark"
 featuredImage: ../../images/parking-app-thumb.png
+date: "2020-09-01"
 type: ["Web App"]
 website: ""
 code: "https://github.com/ordomigato/parking-app"

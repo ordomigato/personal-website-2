@@ -4,7 +4,7 @@ title: "Floor ORG"
 featuredImage: ../../images/floor-thumb.jpg
 date: "2024-13-01"
 type: ["Web App"]
-website: "https://floor-game.netlify.app/game"
+website: "https://floor-game.netlify.app"
 code: "https://github.com/ordomigato/floor"
 tech:
   [

@@ -18,9 +18,12 @@
   }
   & > .project-types {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
     margin-bottom: 2rem;
     .project-type {
+      text-wrap: nowrap;
       // border: 1px solid var(--light-gray);
       padding: 0.5rem 1rem;
       border-radius: 100px;

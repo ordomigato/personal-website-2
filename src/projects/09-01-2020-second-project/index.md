@@ -1,6 +1,6 @@
 ---
 path: "/parking-permit-app"
-title: "Parking Permit App"
+title: "SecurePark"
 featuredImage: ../../images/parking-app-thumb.png
 type: ["Web App"]
 website: ""

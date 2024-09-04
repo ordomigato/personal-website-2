@@ -63,12 +63,12 @@ const Projects = () => {
   return (
     <section id="projects" className="recent-work_section">
       <h2>Projects</h2>
-      <p>See either the live project or code repository.</p>
+      <p>See either the live project or code repository of some of my work.</p>
       <div className="project-types">
       <span onClick={() => handleProjectTypeSelect("")} className={`project-type ${[''].includes(filteredProjectType) ? 'selected' : ''}`}>All</span>
-        <span onClick={() => handleProjectTypeSelect("Web App")} className={`project-type ${['' || 'Web App'].includes(filteredProjectType) ? 'selected' : ''}`}>Web App</span>
-        <span onClick={() => handleProjectTypeSelect("Website")} className={`project-type ${['' || 'Website'].includes(filteredProjectType) ? 'selected' : ''}`}>Website</span>
-        <span onClick={() => handleProjectTypeSelect("Design")} className={`project-type ${['' || 'Design'].includes(filteredProjectType) ? 'selected' : ''}`}>Design</span>
+        <span onClick={() => handleProjectTypeSelect("Web App")} className={`project-type ${['' || 'Web App'].includes(filteredProjectType) ? 'selected' : ''}`}>Web Apps</span>
+        <span onClick={() => handleProjectTypeSelect("Website")} className={`project-type ${['' || 'Website'].includes(filteredProjectType) ? 'selected' : ''}`}>Websites</span>
+        <span onClick={() => handleProjectTypeSelect("Design")} className={`project-type ${['' || 'Design'].includes(filteredProjectType) ? 'selected' : ''}`}>Designs</span>
       </div>
       <div className="projects container">
         {data.allMarkdownRemark.edges.filter((edge: any) => filteredProjectType.includes(edge.node.frontmatter.type) || filteredProjectType === '').map((edge: any) => {

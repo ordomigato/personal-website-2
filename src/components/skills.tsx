@@ -85,7 +85,7 @@ const Skills: React.FC = () => {
             </header>
             <div className="skill-body">
               <p className="skill-overview">
-                From client-friendly WYSIWYG to fully custom solution.
+                From client-friendly WYSIWYG to fully custom software.
               </p>
               <hr className="skill-hr" />
               <div className="skill-subsection">

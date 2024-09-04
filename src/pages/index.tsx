@@ -19,7 +19,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <div className="background-overlay"></div>
       <section className="index-hero">
         <h1>Jeremy Gervais</h1>
-        <p>Web Developer | UI/UX Designer</p>
+        <p>Web Developer | UI/UX Focused</p>
         <div id="dots">
           <div id="dot_1" className="dot"></div>
           <div id="dot_2" className="dot"></div>

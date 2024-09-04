@@ -67,7 +67,3 @@ This made searching for a conversation between 2 or more users efficient and eas
 <p>
 The design was actually developed by another team of individuals, so my job was simply to replicate their mockups. 
 </p>
-
-## Takeaways
-
-- I definitely prefer to prioritize backend development prior to frontend. Otherwise I find myself rehauling the frontend.

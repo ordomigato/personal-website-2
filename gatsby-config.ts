@@ -2,8 +2,9 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Personal Website 2`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Jeremy Gervais | Web Developer`,
+    siteUrl: `https://www.jeremygervais.ca`,
+    description: `Web developer with 4+ years of professional experience designing, building and maintaining websites and SaaS applications.`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -91,6 +92,8 @@ const config: GatsbyConfig = {
         "icon": "src/images/favicon.png"
       }
     },
+    "gatsby-plugin-robots-txt",
+    "gatsby-plugin-sitemap"
   ]
 };
 

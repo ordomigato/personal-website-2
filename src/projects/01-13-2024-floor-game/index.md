@@ -16,7 +16,7 @@ tech:
   ]
 ---
 
-This was a requested project by a member within the Online Reality Gaming community for a game they wanted to host. The game is heavily inspired by the reality game show <a href="https://www.fox.com/the-floor/" target="_blank">The Floor</a>. It was hosted in a facebook group you can find here: <a href="https://www.facebook.com/groups/6791522537640618" target="_blank">Floor ORG</a>.
+This was a requested project by a member within the Online Reality Gaming community for a game they wanted to host. The game is heavily inspired by the reality game show <a href="https://www.fox.com/the-floor/" target="_blank">The Floor</a>. It ran in a facebook group you can find here: <a href="https://www.facebook.com/groups/6791522537640618" target="_blank">Floor ORG</a>.
 
 The first season ran in the spring of 2024 with a whopping 49 players. We expect more seasons in the future!
 

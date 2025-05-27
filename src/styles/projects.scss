@@ -191,6 +191,7 @@
     justify-content: center;
     .projects {
       flex-direction: row;
+      max-width: 1600px;
       .project {
         .overlay {
           opacity: 0;

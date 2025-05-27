@@ -91,19 +91,19 @@ const Skills: React.FC = () => {
               <div className="skill-subsection">
                 <p className="skill-subsection_title">Languages</p>
                 <div className="skill-subsection_items">
-                  <p>HTML | CSS | SASS | JavaScript | Typescript | Golang | JSON | Markdown</p>
+                  <p>HTML | CSS | SASS | JavaScript | Typescript | Golang | C# | JSON | XML | Markdown</p>
                 </div>
               </div>
               <div className="skill-subsection">
                 <p className="skill-subsection_title">Development Tools</p>
                 <div className="skill-subsection_items">
-                  <p>Git | Github | Gitlab | Docker | WSL | Trello | Asana | NPM</p>
+                  <p>Git | Github | Gitlab | Docker | WSL | Asana | Jira | Confluence | Trello</p>
                 </div>
               </div>
               <div className="skill-subsection">
                 <p className="skill-subsection_title">Testing/QA</p>
                 <div className="skill-subsection_items">
-                  <p>Jest | Mocha | Chai | Sinon</p>
+                  <p>Jest | Mocha | Chai | Sinon | Playwright | Selenium</p>
                 </div>
               </div>
               <div className="skill-subsection">
@@ -156,7 +156,7 @@ const Skills: React.FC = () => {
               <div className="skill-subsection">
                 <p className="skill-subsection_title">API Architectures</p>
                 <div className="skill-subsection_items">
-                  <p>REST | GraphQL</p>
+                  <p>REST | GraphQL | WebSockets | SSE</p>
                 </div>
               </div>
             </div>

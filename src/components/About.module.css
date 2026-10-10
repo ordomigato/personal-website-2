@@ -133,15 +133,30 @@
 }
 
 /* global `a` has text-decoration:none, so give the link its own affordance */
-.role a {
+.role a,
+.projectLink {
     border-bottom: 1px solid rgba(36, 31, 43, 0.25);
     padding-bottom: 1px;
     transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.role a:hover {
+.role a:hover,
+.projectLink:hover {
     color: var(--hot-dim);
     border-color: var(--hot-dim);
+}
+
+/* in-page jump to a project card; a button styled to match the external links */
+.projectLink {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    cursor: pointer;
 }
 
 /* ongoing role marker, sits inline after the title */

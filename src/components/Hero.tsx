@@ -2,7 +2,7 @@ import type { CSSProperties } from 'react'
 import Button from './Button'
 import styles from './Hero.module.css'
 
-const stack = ['JavaScript', 'TypeScript', 'React', 'Next.js', 'Vue', 'Nuxt', 'Svelte', 'Lit', 'Tailwind', 'Node.js', 'Tauri', 'PostgreSQL', 'MongoDB', 'Firebase', 'MySQL', 'REST', 'Express', 'GraphQL', 'Go', 'Docker', 'Netlify', 'Playwright', 'Git', 'CI/CD']
+const stack = ['JavaScript', 'TypeScript', 'React', 'Next.js', 'Vue', 'Nuxt', 'Svelte', 'Lit', 'Tailwind', 'Node.js', 'Tauri', 'PostgreSQL', 'MongoDB', 'Firebase', 'MySQL', 'REST', 'Express', 'GraphQL', 'Go', 'AWS', 'Docker', 'Netlify', 'Playwright', 'Git', 'CI/CD']
 const headline = ['Software Developer', 'Dashboards', 'WebApps', 'Websites']
 
 function Hero() {

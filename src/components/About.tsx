@@ -1,3 +1,4 @@
+import { projects } from '../data/projects'
 import { useReveal } from '../utils/useReveal'
 import styles from './About.module.css'
 
@@ -13,7 +14,7 @@ const timeline: { year: string; entries: Entry[] }[] = [
   {
     year: '2020',
     entries: [
-      { role: 'GameShelf', detail: 'Built to catalog my game collection' },
+      { role: 'GameShelf', detail: 'Built to catalog my game collection.' },
       { role: 'SecurePark', detail: 'Client app initially built for Skyview Security to handle parking permits for residents.' },
     ],
   },
@@ -48,7 +49,10 @@ const timeline: { year: string; entries: Entry[] }[] = [
   },
 ]
 
-function About() {
+// Timeline entries named after a project link down to its card.
+const projectTitles = new Set(projects.map((p) => p.title))
+
+function About({ onPickProject }: { onPickProject: (title: string) => void }) {
   const { ref, visible } = useReveal<HTMLElement>()
 
   return (
@@ -92,6 +96,15 @@ function About() {
                           <a href={entry.href} target="_blank" rel="noopener noreferrer">
                             {entry.role} ↗
                           </a>
+                        ) : projectTitles.has(entry.role) ? (
+                          <button
+                            type="button"
+                            className={styles.projectLink}
+                            title={`See ${entry.role} in Projects`}
+                            onClick={() => onPickProject(entry.role)}
+                          >
+                            {entry.role} ↓
+                          </button>
                         ) : (
                           entry.role
                         )}

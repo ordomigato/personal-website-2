@@ -56,7 +56,7 @@ function Skills({ onPickTech }: { onPickTech: PickTech }) {
             </div>
             <div className={styles.sub}>
               <p className={styles.st}>Databases</p>
-              <Chips items={['Postgres', 'MySQL', 'MongoDB', 'Firebase', 'Sequelize']} onPick={onPickTech} />
+              <Chips items={['Postgres', 'Neon', 'MySQL', 'MongoDB', 'Firebase', 'Drizzle', 'Sequelize']} onPick={onPickTech} />
             </div>
             <div className={styles.sub}>
               <p className={styles.st}>API &amp; contracts</p>
@@ -64,7 +64,7 @@ function Skills({ onPickTech }: { onPickTech: PickTech }) {
             </div>
             <div className={styles.sub}>
               <p className={styles.st}>Hosting &amp; deploy</p>
-              <Chips items={['Docker', 'Digital Ocean', 'Heroku', 'Netlify', 'Nginx']} onPick={onPickTech} />
+              <Chips items={['AWS Lambda', 'Cognito', 'SST', 'Docker', 'Digital Ocean', 'Heroku', 'Netlify', 'Nginx']} onPick={onPickTech} />
             </div>
           </div>
 
@@ -77,7 +77,7 @@ function Skills({ onPickTech }: { onPickTech: PickTech }) {
             </div>
             <div className={styles.sub}>
               <p className={styles.st}>Frameworks &amp; libraries</p>
-              <Chips items={['React', 'Next.js', 'Gatsby', 'Vue', 'Nuxt', 'Svelte', 'Lit', 'Tauri', 'Three.js']} onPick={onPickTech} />
+              <Chips items={['React', 'Next.js', 'Gatsby', 'Vue', 'Nuxt', 'Svelte', 'Lit', 'Tauri', 'TanStack Table', 'Three.js']} onPick={onPickTech} />
             </div>
             <div className={styles.sub}>
               <p className={styles.st}>State</p>
@@ -102,7 +102,7 @@ function Skills({ onPickTech }: { onPickTech: PickTech }) {
             </div>
             <div className={styles.sub}>
               <p className={styles.st}>Source &amp; process</p>
-              <Chips items={['Git', 'Jira', 'Confluence', 'Asana']} onPick={onPickTech} />
+              <Chips items={['Git', 'GitHub Actions', 'Jira', 'Confluence', 'Asana']} onPick={onPickTech} />
             </div>
             <div className={styles.sub}>
               <p className={styles.st}>CMS</p>

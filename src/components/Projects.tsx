@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react'
-import { projects, projectsUsing, type Project, type ProjectType } from '../data/projects'
+import { useEffect, useMemo, useState } from 'react'
+import { projectId, projects, projectsUsing, type Project, type ProjectType } from '../data/projects'
 import { useReveal } from '../utils/useReveal'
 import MediaDialog, { type Media } from './MediaDialog'
 import styles from './Projects.module.css'
@@ -33,12 +33,30 @@ type Props = {
   /** Skill picked in the Stack section; narrows the grid to projects that used it. */
   tech: string | null
   onClearTech: () => void
+  /** Project picked in the About timeline; scrolled to and briefly highlighted. */
+  focus: { title: string; nonce: number } | null
 }
 
-function Projects({ tech, onClearTech }: Props) {
+function Projects({ tech, onClearTech, focus }: Props) {
   const { ref, visible } = useReveal<HTMLElement>()
   const [filter, setFilter] = useState<Filter>('all')
   const [open, setOpen] = useState<{ title: string; media: Media } | null>(null)
+  const [highlight, setHighlight] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (!focus) return
+    // The card may be hidden by the current filter, so show everything before scrolling.
+    setFilter('all')
+    setHighlight(focus.title)
+    const frame = requestAnimationFrame(() => {
+      document.getElementById(projectId(focus.title))?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    })
+    const timer = setTimeout(() => setHighlight(null), 2200)
+    return () => {
+      cancelAnimationFrame(frame)
+      clearTimeout(timer)
+    }
+  }, [focus])
 
   const shown = useMemo(
     () =>
@@ -81,7 +99,11 @@ function Projects({ tech, onClearTech }: Props) {
 
         <div className={styles.grid}>
           {shown.map((project, i) => (
-            <article key={project.title} className={styles.card}>
+            <article
+              key={project.title}
+              id={projectId(project.title)}
+              className={`${styles.card} ${highlight === project.title ? styles.highlight : ''}`}
+            >
               <div className={styles.cardTop}>
                 <span className={styles.index}>{String(i + 1).padStart(2, '0')} / {project.year}</span>
                 <TypeTag project={project} />

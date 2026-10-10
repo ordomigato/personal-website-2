@@ -9,6 +9,8 @@ export interface Project {
   /** What was built, shown on the card. Design-only projects leave it out. */
   platform?: Platform
   tech: string[]
+  /** Also used, so it counts for the Stack's skill links, but left off the card to keep it short. */
+  moreTech?: string[]
   image: string
   website?: string
   code?: string
@@ -27,6 +29,7 @@ export const projects: Project[] = [
     types: ['Development', 'Design'],
     platform: 'Desktop App',
     tech: ['Tauri', 'React', 'TypeScript', 'Tailwind', 'shadcn/ui', 'Zod', 'Vitest', 'Playwright'],
+    moreTech: ['TanStack Table', 'i18n'],
     image: '/projects/card-maker-studio.png',
     gallery: { src: '/projects/card-maker-studio.png' },
     note: 'In development',
@@ -36,10 +39,11 @@ export const projects: Project[] = [
     year: 2020,
     types: ['Development', 'Design'],
     platform: 'Web App',
-    tech: ['Nuxt', 'Firebase', 'Node.js', 'Heroku', 'Vuex', 'Tailwind', 'Axios', 'SCSS'],
+    tech: ['Nuxt', 'TypeScript', 'Tailwind', 'shadcn/ui', 'Postgres', 'Drizzle', 'SST', 'AWS Lambda', 'Cognito', 'Playwright'],
+    moreTech: ['Vue', 'Zod', 'Neon', 'TanStack Table', 'i18n', 'Vitest', 'GitHub Actions'],
     image: '/projects/gameshelf-thumb.png',
     code: 'https://github.com/ordomigato/game-shelf',
-    note: 'No longer hosted as Heroku retired its free tier 😔',
+    note: 'Being rebuilt and moved to AWS, relaunching soon',
   },
   {
     title: 'SecurePark',
@@ -111,6 +115,11 @@ const techAliases: Record<string, string[]> = {
 /** Baseline of every development project, so linked from the Stack but left off the cards. */
 const everyBuild = ['HTML', 'CSS', 'Git']
 
+/** DOM id of a project's card, so other sections can scroll to it. */
+export function projectId(title: string) {
+  return 'project-' + title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+}
+
 export function projectsUsing(skill: string) {
   if (everyBuild.includes(skill)) return projects.filter((p) => p.types.includes('Development'))
   // TypeScript is listed where it was used, so plain JavaScript is every other build.
@@ -118,5 +127,5 @@ export function projectsUsing(skill: string) {
     return projects.filter((p) => p.types.includes('Development') && !p.tech.includes('TypeScript'))
   }
   const names = techAliases[skill] ?? [skill]
-  return projects.filter((p) => p.tech.some((t) => names.includes(t)))
+  return projects.filter((p) => [...p.tech, ...(p.moreTech ?? [])].some((t) => names.includes(t)))
 }

@@ -17,15 +17,24 @@ function Homepage() {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
   }, [])
 
+  // Clicking a timeline entry jumps to that project's card. The nonce lets the same
+  // project be picked twice in a row and still trigger the scroll.
+  const [focus, setFocus] = useState<{ title: string; nonce: number } | null>(null)
+
+  const pickProject = useCallback((title: string) => {
+    setTech(null)
+    setFocus({ title, nonce: Date.now() })
+  }, [])
+
   return (
     <>
       <CursorGlow />
       <Nav />
       <main className={styles.main}>
         <Hero />
-        <About />
+        <About onPickProject={pickProject} />
         <Skills onPickTech={pickTech} />
-        <Projects tech={tech} onClearTech={() => setTech(null)} />
+        <Projects tech={tech} onClearTech={() => setTech(null)} focus={focus} />
         <Contact />
       </main>
     </>

@@ -183,6 +183,27 @@
     color: var(--text-soft);
 }
 
+/* tech an earlier version used and has since replaced */
+.pastChip {
+    background: rgba(255, 59, 92, 0.08);
+    border: 1px solid rgba(255, 59, 92, 0.35);
+    color: var(--hot);
+}
+
+/* toggles a project's moreTech; dashed so it reads as an action, not another tool */
+.moreChip {
+    background: transparent;
+    border: 1px dashed var(--text-faint);
+    color: var(--pale);
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.moreChip:hover {
+    color: var(--hot);
+    border-color: var(--hot);
+}
+
 .links {
     margin-top: 18px;
     display: flex;

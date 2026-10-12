@@ -14,7 +14,7 @@ const timeline: { year: string; entries: Entry[] }[] = [
   {
     year: '2020',
     entries: [
-      { role: 'GameShelf', detail: 'Built to catalog my game collection.' },
+      { role: 'ThisPlayShelf', detail: 'Built to catalog my game collection.' },
       { role: 'SecurePark', detail: 'Client app initially built for Skyview Security to handle parking permits for residents.' },
     ],
   },
@@ -89,19 +89,21 @@ function About({ onPickProject }: { onPickProject: (title: string) => void }) {
               <li key={group.year} className={styles.group}>
                 <span className={styles.year}>{group.year}</span>
                 <ul className={styles.entries}>
-                  {group.entries.map((entry) => (
+                  {group.entries.map((entry) => {
+                    const project = projectTitles.has(entry.role) ? entry.role : null
+                    return (
                     <li key={entry.role} className={styles.entry}>
                       <p className={styles.role}>
                         {entry.href ? (
                           <a href={entry.href} target="_blank" rel="noopener noreferrer">
                             {entry.role} ↗
                           </a>
-                        ) : projectTitles.has(entry.role) ? (
+                        ) : project ? (
                           <button
                             type="button"
                             className={styles.projectLink}
-                            title={`See ${entry.role} in Projects`}
-                            onClick={() => onPickProject(entry.role)}
+                            title={`See ${project} in Projects`}
+                            onClick={() => onPickProject(project)}
                           >
                             {entry.role} ↓
                           </button>
@@ -112,7 +114,8 @@ function About({ onPickProject }: { onPickProject: (title: string) => void }) {
                       </p>
                       <p className={styles.detail}>{entry.detail}</p>
                     </li>
-                  ))}
+                    )
+                  })}
                 </ul>
               </li>
             ))}

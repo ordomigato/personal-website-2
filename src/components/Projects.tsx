@@ -42,6 +42,16 @@ function Projects({ tech, onClearTech, focus }: Props) {
   const [filter, setFilter] = useState<Filter>('all')
   const [open, setOpen] = useState<{ title: string; media: Media } | null>(null)
   const [highlight, setHighlight] = useState<string | null>(null)
+  // Cards whose extra tech has been expanded with the "+N more" chip.
+  const [expanded, setExpanded] = useState<Set<string>>(new Set())
+
+  const toggleTech = (title: string) =>
+    setExpanded((prev) => {
+      const next = new Set(prev)
+      if (next.has(title)) next.delete(title)
+      else next.add(title)
+      return next
+    })
 
   useEffect(() => {
     if (!focus) return
@@ -116,7 +126,42 @@ function Projects({ tech, onClearTech, focus }: Props) {
                 {project.tech.map((t) => (
                   <span key={t} className={`chip ${styles.techChip}`}>{t}</span>
                 ))}
+                {(project.moreTech || project.pastTech) && (() => {
+                  const more = project.moreTech ?? []
+                  const past = project.pastTech ?? []
+                  // Open by hand, or automatically while a Stack skill filter is on, since the
+                  // matching skill may be one of the hidden ones.
+                  const open = expanded.has(project.title) || tech !== null
+                  return (
+                    <>
+                      {open && more.map((t) => (
+                        <span key={t} className={`chip ${styles.techChip}`}>{t}</span>
+                      ))}
+                      {open && past.map((t) => (
+                        <span
+                          key={t}
+                          className={`chip ${styles.pastChip}`}
+                          title={`${t}: used by an earlier version, since replaced`}
+                          aria-label={`${t} (replaced)`}
+                        >
+                          {t}
+                        </span>
+                      ))}
+                      {tech === null && (
+                        <button
+                          type="button"
+                          className={`chip ${styles.moreChip}`}
+                          aria-expanded={open}
+                          onClick={() => toggleTech(project.title)}
+                        >
+                          {open ? 'Show less' : `+${more.length + past.length} more`}
+                        </button>
+                      )}
+                    </>
+                  )
+                })()}
               </div>
+
               <div className={styles.links}>
                 {project.website && (
                   <a href={project.website} target="_blank" rel="noopener noreferrer">Visit site ↗</a>
@@ -142,7 +187,7 @@ function Projects({ tech, onClearTech, focus }: Props) {
                     className={styles.mediaBtn}
                     onClick={() => setOpen({ title: project.title, media: { kind: 'image', ...project.gallery! } })}
                   >
-                    View full size ⤢
+                    View full size image ⤢
                   </button>
                 )}
                 {project.note && <span className={styles.disabled}>{project.note}</span>}

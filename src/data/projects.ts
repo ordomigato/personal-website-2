@@ -11,6 +11,8 @@ export interface Project {
   tech: string[]
   /** Also used, so it counts for the Stack's skill links, but left off the card to keep it short. */
   moreTech?: string[]
+  /** Used by an earlier version and since replaced; shown as history and still counted for Stack links. */
+  pastTech?: string[]
   image: string
   website?: string
   code?: string
@@ -24,6 +26,18 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: 'ThisPlayShelf',
+    year: 2020,
+    types: ['Development', 'Design'],
+    platform: 'Web App',
+    tech: ['Nuxt', 'TypeScript', 'Tailwind', 'shadcn/ui', 'Postgres', 'Drizzle', 'SST', 'AWS Lambda', 'Cognito', 'Playwright'],
+    moreTech: ['Vue', 'Zod', 'Neon', 'TanStack Table', 'i18n', 'Vitest', 'GitHub Actions', 'CloudFront', 'CloudWatch', 'SNS'],
+    pastTech: ['Firebase', 'Heroku', 'Netlify', 'Vuex', 'Axios', 'SCSS'],
+    image: '/projects/thisplayshelf-thumb.png',
+    website: 'https://thisplayshelf.com/',
+    code: 'https://github.com/ordomigato/game-shelf',
+  },
+  {
     title: 'Card Maker Studio',
     year: 2026,
     types: ['Development', 'Design'],
@@ -35,26 +49,28 @@ export const projects: Project[] = [
     note: 'In development',
   },
   {
-    title: 'GameShelf',
-    year: 2020,
-    types: ['Development', 'Design'],
-    platform: 'Web App',
-    tech: ['Nuxt', 'TypeScript', 'Tailwind', 'shadcn/ui', 'Postgres', 'Drizzle', 'SST', 'AWS Lambda', 'Cognito', 'Playwright'],
-    moreTech: ['Vue', 'Zod', 'Neon', 'TanStack Table', 'i18n', 'Vitest', 'GitHub Actions'],
-    image: '/projects/gameshelf-thumb.png',
-    code: 'https://github.com/ordomigato/game-shelf',
-    note: 'Being rebuilt and moved to AWS, relaunching soon',
-  },
-  {
     title: 'SecurePark',
     year: 2020,
     types: ['Development', 'Design'],
     platform: 'Web App',
-    tech: ['Go', 'Fiber', 'Vue', 'Postgres', 'REST', 'JWT', 'bcrypt', 'Nginx'],
+    tech: ['Go', 'Fiber', 'GORM', 'Postgres', 'Vue', 'TypeScript', 'Docker', 'Nginx'],
+    moreTech: ['REST', 'JWT', 'bcrypt', 'Pinia', 'Tailwind', 'Axios', 'Vitest', 'SCSS'],
+    pastTech: ['React', 'Node.js', 'Express', 'MySQL', 'Sequelize', 'Digital Ocean'],
     image: '/projects/parking-app-thumb.png',
     code: 'https://github.com/ordomigato/parking-app',
     video: 'SCixTRwwc_g',
     note: 'Not deployed, so here it is on video',
+  },
+  {
+    title: 'Floor ORG',
+    year: 2024,
+    types: ['Development'],
+    platform: 'Web App',
+    tech: ['TypeScript', 'Vue', 'Pinia', 'Firebase', 'Netlify'],
+    image: '/projects/floor-thumb.jpg',
+    website: 'https://floor-game.netlify.app',
+    code: 'https://github.com/ordomigato/floor',
+    video: 'LoDZnveNiDU',
   },
   {
     title: 'Skyview Security Website',
@@ -85,17 +101,6 @@ export const projects: Project[] = [
     external: { label: 'View on Behance', href: 'https://www.behance.net/gallery/169097717/Travel-Odyssey' },
   },
   {
-    title: 'Floor ORG',
-    year: 2024,
-    types: ['Development'],
-    platform: 'Web App',
-    tech: ['TypeScript', 'Vue', 'Pinia', 'Firebase', 'Netlify'],
-    image: '/projects/floor-thumb.jpg',
-    website: 'https://floor-game.netlify.app',
-    code: 'https://github.com/ordomigato/floor',
-    video: 'LoDZnveNiDU',
-  },
-  {
     title: 'Icon Set (1)',
     year: 2024,
     types: ['Design'],
@@ -108,6 +113,7 @@ export const projects: Project[] = [
 /** Skill names that are spelled differently, or bundled, in project tech lists. */
 const techAliases: Record<string, string[]> = {
   'Node / Express': ['Node.js', 'Express'],
+  Lambda: ['AWS Lambda'],
   'Adobe CC': ['Adobe XD', 'Adobe Illustrator'],
   WebSockets: ['Socket.io'],
 }
@@ -127,5 +133,7 @@ export function projectsUsing(skill: string) {
     return projects.filter((p) => p.types.includes('Development') && !p.tech.includes('TypeScript'))
   }
   const names = techAliases[skill] ?? [skill]
-  return projects.filter((p) => [...p.tech, ...(p.moreTech ?? [])].some((t) => names.includes(t)))
+  return projects.filter((p) =>
+    [...p.tech, ...(p.moreTech ?? []), ...(p.pastTech ?? [])].some((t) => names.includes(t))
+  )
 }

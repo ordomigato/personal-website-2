@@ -74,6 +74,7 @@
     display: block;
     width: 100%;
     max-height: calc(100vh - 160px);
+    max-height: calc(100svh - 160px);
     object-fit: contain;
     background: #000;
 }

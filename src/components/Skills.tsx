@@ -56,15 +56,19 @@ function Skills({ onPickTech }: { onPickTech: PickTech }) {
             </div>
             <div className={styles.sub}>
               <p className={styles.st}>Databases</p>
-              <Chips items={['Postgres', 'Neon', 'MySQL', 'MongoDB', 'Firebase', 'Drizzle', 'Sequelize']} onPick={onPickTech} />
+              <Chips items={['Postgres', 'Neon', 'MySQL', 'MongoDB', 'Firebase', 'Drizzle', 'GORM', 'Sequelize']} onPick={onPickTech} />
             </div>
             <div className={styles.sub}>
               <p className={styles.st}>API &amp; contracts</p>
               <Chips items={['REST', 'GraphQL', 'GraphQL Codegen', 'WebSockets', 'SSE', 'JWT', 'Zod']} onPick={onPickTech} />
             </div>
             <div className={styles.sub}>
+              <p className={styles.st}>AWS</p>
+              <Chips items={['Lambda', 'Cognito', 'CloudFront', 'CloudWatch', 'SNS', 'SST']} onPick={onPickTech} />
+            </div>
+            <div className={styles.sub}>
               <p className={styles.st}>Hosting &amp; deploy</p>
-              <Chips items={['AWS Lambda', 'Cognito', 'SST', 'Docker', 'Digital Ocean', 'Heroku', 'Netlify', 'Nginx']} onPick={onPickTech} />
+              <Chips items={['Docker', 'Digital Ocean', 'Heroku', 'Netlify', 'Nginx']} onPick={onPickTech} />
             </div>
           </div>
 

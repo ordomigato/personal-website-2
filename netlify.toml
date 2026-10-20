@@ -46,3 +46,9 @@
   from = "/icon-set-1"
   to = "/#projects"
   status = 301
+
+# Serve the generated text files as UTF-8 so non-ASCII characters (em dashes, emoji) don't garble.
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"

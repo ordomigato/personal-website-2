@@ -11,7 +11,7 @@ function Hero() {
       <div className={styles.top}>
         <div>
           <div className={styles.nameRow}>
-            <p className={styles.name}>JEREMY&nbsp;GERVAIS</p>
+            <h1 className={styles.name}>JEREMY&nbsp;GERVAIS</h1>
             <span className={styles.badge}>
               <span className={styles.dot} />
               Open to opportunities
@@ -45,7 +45,7 @@ function Hero() {
 
       <div className={styles.bottom}>
         <p className={styles.sub}>
-          Software developer with <strong>{new Date().getFullYear() - 2020}+</strong> years of professional and over a decade of freelance experience building full-stack <strong>websites, web-based applications, and SaaS products</strong>.
+          Software developer with <strong suppressHydrationWarning>{new Date().getFullYear() - 2020}+</strong> years of professional and over a decade of freelance experience building full-stack <strong>websites, web-based applications, and SaaS products</strong>.
         </p>
         <div className={styles.cta}>
           <Button href="#contact">Get in touch</Button>

@@ -82,7 +82,7 @@ function Projects({ tech, onClearTech, focus }: Props) {
             <p className="eyebrow" style={{ color: 'var(--lilac)' }}>03 — Projects</p>
             <h2 className={styles.heading}>Selected work</h2>
           </div>
-          <p className={styles.count}>{shown.length} shown · 2020 – {new Date().getFullYear()}</p>
+          <p className={styles.count} suppressHydrationWarning>{shown.length} shown · 2020 – {new Date().getFullYear()}</p>
         </div>
 
         <div className={styles.filters}>

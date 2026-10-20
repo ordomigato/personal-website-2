@@ -119,7 +119,7 @@ function Contact() {
         </form>
 
         <div className={styles.foot}>
-          <span>© {new Date().getFullYear()} Jeremy Gervais</span>
+          <span suppressHydrationWarning>© {new Date().getFullYear()} Jeremy Gervais</span>
           <div className={styles.socials}>
             <a href="https://github.com/ordomigato" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://www.linkedin.com/in/jeremy-gervais/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
